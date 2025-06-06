@@ -22,13 +22,11 @@ BankAccount::BankAccount(const BankAccount& src) {
 }
 
 // initializer list ctor
-BankAccount::BankAccount(std::string name, int number, double bal)
-    : accountHolder(name), accountNumber(number), balance(bal) {}
+BankAccount::BankAccount(std::string name, int number)
+    : accountHolder(name), accountNumber(number) {}
 
 // destructor
-BankAccount::~BankAccount() {
-    std::cout << "Your account is closed" << std::endl;
-}
+BankAccount::~BankAccount() {}
 
 // method implementations
 void BankAccount::deposit(double ammount) {
@@ -54,3 +52,12 @@ void BankAccount::display() {
     std::cout << "Account number - " << accountNumber << std::endl;
     std::cout << "Account balance - " << balance << std::endl;
 }
+
+int BankAccount::getAccountNumber() const{
+    return accountNumber;
+}
+
+int BankAccount::getAccountBalance() const{
+    return balance;
+}
+
