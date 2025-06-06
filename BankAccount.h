@@ -13,12 +13,14 @@ class BankAccount{
         BankAccount();
         BankAccount(const std::string& name,int number,double Balance = 0.0);
         BankAccount(const BankAccount& src);
-        BankAccount(std::string name,int number,double Balance = 0.0);
+        BankAccount(std::string name,int number);
         ~BankAccount();
 
         void deposit(double ammount);
         bool withdraw(double ammount);
         void display();
+        int getAccountNumber() const;
+        int getAccountBalance() const;
 
 };
 #endif
