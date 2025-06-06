@@ -26,7 +26,9 @@ BankAccount::BankAccount(std::string name, int number)
     : accountHolder(name), accountNumber(number) {}
 
 // destructor
-BankAccount::~BankAccount() {}
+BankAccount::~BankAccount() {
+     std::cout << "Your account is closed" << std::endl;
+}
 
 // method implementations
 void BankAccount::deposit(double ammount) {
