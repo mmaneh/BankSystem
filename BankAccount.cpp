@@ -27,7 +27,7 @@ BankAccount::BankAccount(std::string name, int number)
 
 // destructor
 BankAccount::~BankAccount() {
-     std::cout << "Your account is closed" << std::endl;
+     std::cout << "Accounts are closed" << std::endl;
 }
 
 // method implementations
