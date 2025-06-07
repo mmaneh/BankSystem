@@ -6,7 +6,7 @@
 
     void BankSystem::addAccounts(const std::string& name, int accountNumber, double initialBalance) {
         BankAccount account(name, accountNumber, initialBalance);
-        accounts.push_back(account);
+        accounts.emplace_back(account);
 
     }
     BankAccount* BankSystem::findAccount(int accountNumber){
