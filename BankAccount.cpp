@@ -1,11 +1,8 @@
 #include "BankAccount.h"
 
 // default ctor
-BankAccount::BankAccount() {
-     accountHolder = "Unknown";
-     accountNumber = 0;
-     balance = 0.0;
-}
+BankAccount::BankAccount() : accountHolder ("Unknown"), accountNumber(0), balance (0.0){}
+
 
 // parameter ctor
 BankAccount::BankAccount(const std::string& name, int number, double Balance) {
