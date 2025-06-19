@@ -9,7 +9,7 @@ BankAccount::BankAccount(const std::string& name, int number, double Balance) : 
 
 
 // copy ctor
-BankAccount::BankAccount(const BankAccount& src) : accountHolder (src.accountHolder), accountNumber (src.accountNumber), balance (src.balance)
+BankAccount::BankAccount(const BankAccount& src) : accountHolder (src.accountHolder), accountNumber (src.accountNumber), balance (src.balance){
 }
 
 // initializer list ctor
