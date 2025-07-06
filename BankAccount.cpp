@@ -30,13 +30,12 @@ void BankAccount::deposit(double ammount) {
     balance += ammount;
 }
 
-bool BankAccount::withdraw(double ammount) {
+void BankAccount::withdraw(double ammount) {
     if (ammount > balance) {
-        std::cout << "Invalid balance" << std::endl;
-        return false;
+        throw MyExcept{};       
     }
     balance -= ammount;
-    return true;
+    
 }
 
 void BankAccount::display() {

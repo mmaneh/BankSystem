@@ -19,13 +19,14 @@
         BankAccount* sender = findAccount(senderAcc);
         BankAccount* receiver = findAccount(receiverAcc);
 
-        if(sender->withdraw(ammount)){
-            receiver->deposit(ammount);
-        }else {
-            std::cout << "Invalid balance" << std::endl;
-        }
-        
+        try {
+	     sender->withdraw(ammount);
+	}
+        catch(std::exception& e){
+		cerr << e.what() << "/n"; 	
+	}
 
+	receiver->deposit(ammount);
     }
    
     void BankSystem::displayAllAccounts() {

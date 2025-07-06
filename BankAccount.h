@@ -3,6 +3,14 @@
 #include <string>
 #include <iostream>
 
+class MyExcept : public std::exception{
+	
+public:
+	const char* what() const noexcept {
+		return "The balance is invalid"
+	}
+};
+
 class BankAccount{
     private:
         std::string accountHolder;
