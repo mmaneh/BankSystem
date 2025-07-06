@@ -49,7 +49,7 @@ int BankAccount::getAccountNumber() const{
     return accountNumber;
 }
 
-int BankAccount::getAccountBalance() const{
+double BankAccount::getAccountBalance() const{
     return balance;
 }
 

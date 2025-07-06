@@ -6,8 +6,9 @@
 class MyExcept : public std::exception{
 	
 public:
-	const char* what() const noexcept {
-		return "The balance is invalid"
+	const char* what() const noexcept override {
+	
+		return "The balance is invalid";
 	}
 };
 
@@ -25,10 +26,10 @@ class BankAccount{
         ~BankAccount();
 
         void deposit(double ammount);
-        bool withdraw(double ammount);
+        void withdraw(double ammount);
         void display();
         int getAccountNumber() const;
-        int getAccountBalance() const;
+        double getAccountBalance() const;
 
 };
 #endif

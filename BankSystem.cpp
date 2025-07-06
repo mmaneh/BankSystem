@@ -8,7 +8,7 @@
         accounts.emplace_back(name, accountNumber, initialBalance);
     }
     BankAccount* BankSystem::findAccount(int accountNumber){
-        for (int i = 0; i < accounts.size(); ++i) {
+        for (size_t i = 0; i < accounts.size(); ++i) {
             if(accounts[i].getAccountNumber() == accountNumber){
                 return &accounts[i];
             }
@@ -19,18 +19,16 @@
         BankAccount* sender = findAccount(senderAcc);
         BankAccount* receiver = findAccount(receiverAcc);
 
-        try {
-	     sender->withdraw(ammount);
-	}
-        catch(std::exception& e){
-		cerr << e.what() << "/n"; 	
-	}
-
+       if(!sender || !receiver) {
+       		throw MyExcept{};
+       }
+       
+	sender->withdraw(ammount);
 	receiver->deposit(ammount);
     }
    
     void BankSystem::displayAllAccounts() {
-        for (int i = 0; i < accounts.size(); ++i) {
+        for (size_t i = 0; i < accounts.size(); ++i) {
             accounts[i].display(); 
         }
     }
